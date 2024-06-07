@@ -1,26 +1,26 @@
-// var fs = require('fs');
-// var os = require('os')
-// var user= os.userInfo();
+const express = require('express')
+const app = express()
 
-// console.log(user.username);
-
-// fs.appendFile("greeting.txt", `Hi ${user.username} \n`, ()=>{
-//     console.log("file created");
-// } );
-// console.log(fs);
-
-var _ = require('lodash');
-
-// const notes = require('./notes.js')
-// var age= notes.age;
-// console.log(age);
-
-// var result= notes.addNumber(age+6,2,4);
-// console.log(result);
-
-var data = ["person", "person", 1,2,1,2, "name","age","2"];
-
-const filter = _.uniq(data);
-console.log(filter);
+app.get('/', function (req, res) {
+  res.send('Hello World')
+})
 
 
+app.get('/help', function (req, res) {
+    var customizedData= {
+        name:"abhishek",
+        age:27
+    }
+    res.send(customizedData);
+
+    // res.send('How can i help u');
+  });
+
+  app.get('/contact',  (req, res)=> {
+    res.send('Contact us')
+  })
+
+// app.listen(3000)
+app.listen(3000,()=>{
+    console.log("server is running on port 3000"); // we can write callback fun to know that our server is running or not 
+})
