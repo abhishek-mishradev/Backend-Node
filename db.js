@@ -1,8 +1,11 @@
-const mangoose = require('mongoose')
+const mangoose = require('mongoose');
+require('dotenv').config();
 
-const mangoURL= "mongodb://localhost:27017/hotels";
 
-mangoose.connect(mangoURL,{
+// const mongoURL = process.env.MONGODB_URL_LOCAL
+const mongoURL= process.env.MONGODB_URL
+
+mangoose.connect(mongoURL,{
     useNewUrlParser:true,
     // useCreateIndex:true,
     useUnifiedTopology:true,
