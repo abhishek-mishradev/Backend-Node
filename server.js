@@ -15,11 +15,16 @@ const PORT = process.env.PORT || 3000;
 
 const logRequest = (req, res, next) => {
   console.log(
-    `[${new Date().toLocaleDateString()}] Request made to : ${req.origialUrl}`
+    `[${new Date().toLocaleDateString()}] Request made to: ${req.originalUrl}`
   );
   next();
 };
+
+// Make sure 'app' is defined (e.g., as an Express application)
+
+
 app.use(logRequest);
+
 
 
 
